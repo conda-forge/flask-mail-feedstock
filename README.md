@@ -11,6 +11,18 @@ Summary: Flask extension for sending email
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/flask-mail-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/flask-mail-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/flask-mail-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/flask-mail-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/flask-mail-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/flask-mail-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/flask-mail/badges/version.svg)](https://anaconda.org/conda-forge/flask-mail)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/flask-mail/badges/downloads.svg)](https://anaconda.org/conda-forge/flask-mail)
+
 Installing flask-mail
 =====================
 
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `flask-mail` available on your pla
 ```
 conda search flask-mail --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/flask-mail-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/flask-mail-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/flask-mail-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/flask-mail-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/flask-mail-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/flask-mail-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/flask-mail/badges/version.svg)](https://anaconda.org/conda-forge/flask-mail)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/flask-mail/badges/downloads.svg)](https://anaconda.org/conda-forge/flask-mail)
 
 
 Updating flask-mail-feedstock
