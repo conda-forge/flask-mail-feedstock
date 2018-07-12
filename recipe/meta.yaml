@@ -1,8 +1,8 @@
-{%set name = "flask-mail" %}
-{%set camelName = "Flask-Mail" %}
-{%set version = "0.9.1" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "22e5eb9a940bf407bcf30410ecc3708f3c56cc44b29c34e1726fe85006935f41" %}
+{% set name = "flask-mail" %}
+{% set camelName = "Flask-Mail" %}
+{% set version = "0.9.1" %}
+{% set hash_type = "sha256" %}
+{% set hash_val = "22e5eb9a940bf407bcf30410ecc3708f3c56cc44b29c34e1726fe85006935f41" %}
 
 package:
   name: {{ name }}
@@ -10,17 +10,18 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  number: 1
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  noarch: python
+  number: 2
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
 
   run:
     - python
