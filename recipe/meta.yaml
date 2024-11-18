@@ -1,8 +1,7 @@
 {% set name = "flask-mail" %}
 {% set camelName = "Flask-Mail" %}
-{% set version = "0.9.1" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "22e5eb9a940bf407bcf30410ecc3708f3c56cc44b29c34e1726fe85006935f41" %}
+{% set version = "0.10.0" %}
+{% set hash_val = "44083e7b02bbcce792209c06252f8569dd5a325a7aaa76afe7330422bd97881d" %}
 
 package:
   name: {{ name }}
@@ -10,13 +9,13 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: {{ hash_val }}
 
 build:
   noarch: python
-  number: 2
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
