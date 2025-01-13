@@ -1,16 +1,13 @@
 {% set name = "flask-mail" %}
-{% set camelName = "Flask-Mail" %}
 {% set version = "0.10.0" %}
-{% set hash_val = "44083e7b02bbcce792209c06252f8569dd5a325a7aaa76afe7330422bd97881d" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: {{ hash_val }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flask_mail-{{ version }}.tar.gz
+  sha256: 44083e7b02bbcce792209c06252f8569dd5a325a7aaa76afe7330422bd97881d
 
 build:
   noarch: python
@@ -19,17 +16,22 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
-
+    - flit-core <4
   run:
-    - python
+    - python >={{ python_min }}
     - flask
     - blinker
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - flask_mail
+  commands:
+    - pip check
 
 about:
   home: https://pythonhosted.org/Flask-Mail/
@@ -43,3 +45,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - synapticarbors
