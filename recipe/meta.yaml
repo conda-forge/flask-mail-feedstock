@@ -1,41 +1,42 @@
 {% set name = "flask-mail" %}
-{% set camelName = "Flask-Mail" %}
-{% set version = "0.9.1" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "22e5eb9a940bf407bcf30410ecc3708f3c56cc44b29c34e1726fe85006935f41" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flask_mail-{{ version }}.tar.gz
+  sha256: 44083e7b02bbcce792209c06252f8569dd5a325a7aaa76afe7330422bd97881d
 
 build:
   noarch: python
-  number: 2
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
-
+    - flit-core <4
   run:
-    - python
+    - python >={{ python_min }}
     - flask
     - blinker
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - flask_mail
+  commands:
+    - pip check
 
 about:
   home: https://pythonhosted.org/Flask-Mail/
-  license: BSD 3-Clause
-  license_file: LICENSE
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
   license_family: BSD
   summary: 'Flask extension for sending email'
   doc_url: https://pythonhosted.org/Flask-Mail/
@@ -44,3 +45,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - synapticarbors
