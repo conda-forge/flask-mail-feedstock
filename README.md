@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/flask-mail-feed
 
 Home: https://pythonhosted.org/Flask-Mail/
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Summary: Flask extension for sending email
 
@@ -148,4 +148,5 @@ Feedstock Maintainers
 =====================
 
 * [@pmlandwehr](https://github.com/pmlandwehr/)
+* [@synapticarbors](https://github.com/synapticarbors/)
 
